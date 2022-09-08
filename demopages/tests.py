@@ -1,6 +1,7 @@
 from urllib import response
 from django.test import Client, TestCase
 
+
 class IndexTestCase(TestCase):
     def setUp(self) -> None:
         self.client = Client()
@@ -9,4 +10,3 @@ class IndexTestCase(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.content, b'Hello, world')
-
